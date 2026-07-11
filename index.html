@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحسابات البنكية | شركة عالم الفائدة الحديثة للخردوات المحدودة</title>
+    <!-- خط تجوال لقراءة احترافية ومريحة -->
+    <link href="https://googleapis.com" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0f172a;
+            --accent-color: #0284c7;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 30px 20px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 25px;
+        }
+
+        /* تكبير وإبراز حاوية شعار الشركة ليظهر بوضوح فائق */
+        .company-logo-box {
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 15px auto;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #e2e8f0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .company-logo-box img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+        }
+
+        /* تضخيم اسم الشركة وإبرازه بشكل فخم وعريض */
+        .header h1 {
+            font-size: 21px;
+            color: #0f172a;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .header p {
+            font-size: 13px;
+            color: #0284c7;
+            font-weight: 700;
+            background: #e0f2fe;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 50px;
+        }
+
+        .bank-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 16px;
+            text-align: right;
+            border: 1px solid #f1f5f9;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        .bank-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        /* خطوط الهوية الملونة الجانبية */
+        .snb { border-right: 5px solid #005a36; }
+        .alrajhi { border-right: 5px solid #0054a6; }
+        .albilad { border-right: 5px solid #b87b14; }
+        .riyad { border-right: 5px solid #007a87; }
+
+        /* ضبط حجم ومحاذاة صور البنوك الحقيقية لتعمل بثبات كامل */
+        .bank-logo-img {
+            height: 35px;
+            width: 35px;
+            margin-left: 12px;
+            object-fit: contain;
+            display: block !important;
+        }
+
+        /* اسم البنك باللغة العربية بخط واضح وعريض */
+        .bank-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .account-label {
+            font-size: 11px;
+            color: #64748b;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        /* فرد رقم الحساب بالكامل في سطر واحد دون انقسام */
+        .account-box {
+            display: flex;
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 12px;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #e2e8f0;
+            direction: ltr; 
+            gap: 8px;
+            width: 100%;
+        }
+
+        .account-number {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #0f172a;
+            white-space: nowrap !important;
+            overflow-x: auto;
+            flex-grow: 1;
+            text-align: left;
+            letter-spacing: 0.5px;
+        }
+
+        /* زر النسخ الدائري الاحترافي بأيقونة المستطيلين المتداخلين الفنية */
+        .copy-btn {
+            background: #0f172a;
+            color: white;
+            border: none;
+            width: 40px;
+            height: 38px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        /* رسم أيقونة المستطيلات المتداخلة بالـ CSS للثبات الكامل */
+        .copy-icon {
+            width: 13px;
+            height: 15px;
+            border: 2px solid white;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .copy-icon::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 13px;
+            height: 15px;
+            border-top: 2px solid white;
+            border-right: 2px solid white;
+            border-radius: 0 2px 0 0;
+        }
+
+        .copy-btn:hover {
+            background: #1e293b;
+            transform: scale(1.04);
+        }
+
+        .copy-btn.copied {
+            background: #10b981;
+        }
+
+        .copy-btn.copied .copy-icon {
+            display: none;
+        }
+        
+        .copy-btn.copied::after {
+            content: '✓';
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 11px;
+            color: #94a3b8;
+            border-top: 1px dashed #e2e8f0;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="company-logo-box">
+            <img src="logo.png" alt="شعار شركة عالم الفائدة">
+        </div>
+        <h1>شركة عالم الفائدة الحديثة للخردوات المحدودة</h1>
+        <p>بيانات الحسابات البنكية (IBAN)</p>
+    </div>
+
+    <!-- البنك الأهلي السعودي -->
+    <div class="bank-card snb">
+        <div class="bank-info">
+            <img class="bank-logo-img" src="https://icons8.com" alt="شعار الأهلي">
+            <div class="bank-name">البنك الأهلي السعودي (SNB)</div>
+        </div>
+        <span class="account-label">رقم الحساب (الآيبان)</span>
+        <div class="account-box">
+            <span class="account-number" id="snb-iban">SA0410000012558115000209</span>
+            <button class="copy-btn" onclick="copyAccount('snb-iban', this)" title="نسخ الآيبان">
+                <div class="copy-icon"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- مصرف الراجحي -->
+    <div class="bank-card alrajhi">
+        <div class="bank-info">
+            <img class="bank-logo-img" src="https://icons8.com" alt="شعار الراجحي">
+            <div class="bank-name">مصرف الراجحي</div>
+        </div>
+        <span class="account-label">رقم الحساب (الآيبان)</span>
+        <div class="account-box">
+            <span class="account-number" id="rajhi-iban">SA4480000186608010222277</span>
+            <button class="copy-btn" onclick="copyAccount('rajhi-iban', this)" title="نسخ الآيبان">
+                <div class="copy-icon"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- بنك البلاد -->
+    <div class="bank-card albilad">
+        <div class="bank-info">
+            <img class="bank-logo-img" src="https://icons8.com" alt="شعار البلاد">
+            <div class="bank-name">بنك البلاد</div>
+        </div>
+        <span class="account-label">رقم الحساب (الآيبان)</span>
+        <div class="account-box">
+            <span class="account-number" id="bilad-iban">SA5015000603102665110011</span>
+            <button class="copy-btn" onclick="copyAccount('bilad-iban', this)" title="نسخ الآيبان">
+                <div class="copy-icon"></div>
+            </button>
+        </div>
+    </div>
+
+    <!-- بنك الرياض -->
+    <div class="bank-card riyad">
+        <div class="bank-info">
+            <img class="bank-logo-img" src="https://icons8.com" alt="شعار الرياض">
+            <div class="bank-name">بنك الرياض</div>
+        </div>
+        <span class="account-label">رقم الحساب (الآيبان)</span>
+        <div class="account-box">
+            <span class="account-number" id="riyad-iban">SA5720000001471374089940</span>
+            <button class="copy-btn" onclick="copyAccount('riyad-iban', this)" title="نسخ الآيبان">
+                <div class="copy-icon"></div>
+            </button>
+        </div>
+    </div>
+
+    <div class="footer">
+        شركة عالم الفائدة الحديثة للخردوات المحدودة © 2026
+    </div>
+</div>
+
+<script>
+function copyAccount(elementId, button) {
+    const textToCopy = document.getElementById(elementId).innerText.trim();
+    
+    navigator.clipboard.writeText(textToCopy).then(() => {
+        button.classList.add('copied');
+        
+        setTimeout(() => {
+            button.classList.remove('copied');
+        }, 1200);
+    }).catch(err => {
+        console.error('فشل النسخ: ', err);
+    });
+}
+</script>
+
+</body>
+</html>

@@ -102,6 +102,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 12px;
+            padding-right: 4px;
         }
 
         /* خطوط الهوية الملونة الجانبية */
@@ -109,16 +110,6 @@
         .alrajhi { border-right: 5px solid #0054a6; }
         .albilad { border-right: 5px solid #b87b14; }
         .riyad { border-right: 5px solid #007a87; }
-
-        /* ضبط حجم ومحاذاة صور البنوك المحلية المرفوعة يدويًا */
-        .bank-logo-img {
-            height: 35px;
-            width: auto;
-            max-width: 120px;
-            margin-left: 12px;
-            object-fit: contain;
-            display: block !important;
-        }
 
         /* اسم البنك باللغة العربية بخط واضح وعريض */
         .bank-name {
@@ -240,7 +231,6 @@
     <!-- البنك الأهلي السعودي -->
     <div class="bank-card snb">
         <div class="bank-info">
-            <img class="bank-logo-img" src="snb.png" alt="شعار الأهلي">
             <div class="bank-name">البنك الأهلي السعودي (SNB)</div>
         </div>
         <span class="account-label">رقم الحساب (الآيبان)</span>
@@ -255,7 +245,6 @@
     <!-- مصرف الراجحي -->
     <div class="bank-card alrajhi">
         <div class="bank-info">
-            <img class="bank-logo-img" src="rajhi.png" alt="شعار الراجحي">
             <div class="bank-name">مصرف الراجحي</div>
         </div>
         <span class="account-label">رقم الحساب (الآيبان)</span>
@@ -270,7 +259,6 @@
     <!-- بنك البلاد -->
     <div class="bank-card albilad">
         <div class="bank-info">
-            <img class="bank-logo-img" src="bilad.png" alt="شعار البلاد">
             <div class="bank-name">بنك البلاد</div>
         </div>
         <span class="account-label">رقم الحساب (الآيبان)</span>
@@ -285,7 +273,6 @@
     <!-- بنك الرياض -->
     <div class="bank-card riyad">
         <div class="bank-info">
-            <img class="bank-logo-img" src="riyad.png" alt="شعار الرياض">
             <div class="bank-name">بنك الرياض</div>
         </div>
         <span class="account-label">رقم الحساب (الآيبان)</span>
